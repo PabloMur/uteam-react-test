@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getUsers } from "../../../ApiCalls";
 import { TestCompNavbar } from "../../components/TestCompNavbar";
-import UserCard from "./UserCard";
+import UserCard from "../../components/UserCard";
 import styles from "./styles.module.css";
 
 export default function UsersPage() {

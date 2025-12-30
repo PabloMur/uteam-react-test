@@ -1,7 +1,7 @@
 .container {
   width: 100%;
-  padding-top: 20px;
   color: white;
+  padding-bottom: 40px;
 }
 
 .header {
@@ -11,18 +11,19 @@
 }
 
 .title {
-  font-size: 32px;
-  font-weight: 700;
-  color: #fff;
+  font-size: 28px;
+  color: #0d47a1;
+  font-weight: 600;
 }
 
 .userList {
-  width: 90%;
+  width: 70%;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 22px;
 }
+
 
 /* CARD */
 .card {

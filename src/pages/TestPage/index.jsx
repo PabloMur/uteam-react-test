@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getPosts, createPost, updatePost } from "../../../ApiCalls";
-import PostCard from "../../components/PostCard";
+import {PostCard} from "../../components/PostCard";
 import CreatePostModal from "../../components/CreatePostModal";
 import Toast from "../../components/ui/Toast";
 import { TestCompNavbar } from "../../components/TestCompNavbar";
