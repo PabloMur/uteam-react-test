@@ -1,0 +1,75 @@
+.container {
+  width: 100%;
+  color: white;
+  padding-bottom: 40px;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 28px;
+  color: #0d47a1;
+  font-weight: 600;
+}
+
+.userList {
+  width: 70%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+
+/* CARD */
+.card {
+  background: #ffffff;
+  color: #222;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 22px rgba(0, 0, 0, 0.14);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.22);
+}
+
+.userName {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.userEmail {
+  font-size: 15px;
+  opacity: 0.8;
+}
+
+.userCompany,
+.userCity {
+  font-size: 14px;
+  margin-top: 4px;
+  opacity: 0.9;
+}
+
+.viewPostsBtn {
+  margin-top: 14px;
+  display: inline-block;
+  background-color: #2f80ed;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s ease-in-out;
+}
+
+.viewPostsBtn:hover {
+  background-color: #0d47a1;
+}

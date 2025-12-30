@@ -1,0 +1,57 @@
+.card {
+  background: #ffffff;
+  color: #111;
+  border-radius: 16px;
+  padding: 22px 20px;
+  box-shadow: 0 4px 22px rgba(0, 0, 0, 0.14);
+  transition: 0.25s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
+}
+
+.userName {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+  color: #0d47a1;
+}
+
+.userEmail {
+  font-size: 14px;
+  opacity: 0.75;
+}
+
+.userCompany {
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 4px;
+  color: #333;
+}
+
+.userCity {
+  font-size: 13px;
+  opacity: 0.75;
+}
+
+.viewPostsBtn {
+  margin-top: 14px;
+  align-self: flex-start;
+  background: #2f80ed;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  transition: background 0.25s ease-in-out;
+}
+
+.viewPostsBtn:hover {
+  background-color: #0c3a89;
+}

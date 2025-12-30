@@ -1,0 +1,80 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+}
+
+.modal {
+  width: 400px;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  color: #111;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #d5d5d5;
+  font-size: 15px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.saveBtn {
+  background-color: #0d47a1;
+  border: none;
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 6px;
+}
+
+.cancelBtn {
+  background-color: #444;
+  border: none;
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 6px;
+}
+
+.saveBtn:hover {
+  background-color: #09306e;
+}
+
+.cancelBtn:hover {
+  background-color: #222;
+}
+
+.fadeIn {
+  animation: fadeInScale 0.25s ease-out;
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
