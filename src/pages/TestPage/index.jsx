@@ -1,21 +1,39 @@
 import { useEffect, useState } from "react";
-import { getPosts } from "../../../ApiCalls";
-import { PostCard } from "../../components/PostCard";
+import { getPosts, createPost, updatePost } from "../../../ApiCalls";
+import PostCard from "../../components/PostCard";
+import CreatePostModal from "../../components/CreatePostModal";
+import Toast from "../../components/ui/Toast";
 import { TestCompNavbar } from "../../components/TestCompNavbar";
+import { useLocation } from "react-router-dom";
 import styles from "./styles.module.css";
 
 export default function TestPage() {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  
+  const [showModal, setShowModal] = useState(false);
+  const [editingPost, setEditingPost] = useState(null);
+
+  const [toastMsg, setToastMsg] = useState(null);
+
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const filterUserId = searchParams.get("userId");
 
   useEffect(() => {
     loadPosts();
-  }, []);
+  }, [filterUserId]);
 
   const loadPosts = async () => {
     try {
-      const data = await getPosts();
+      let data = await getPosts();
+
+      // Filtrar por usuario si viene desde UsersPage
+      if (filterUserId) {
+        data = data.filter(p => p.userId == filterUserId);
+      }
+
       setPosts(data);
       setLoading(false);
     } catch (err) {
@@ -26,13 +44,31 @@ export default function TestPage() {
 
   const handleDelete = (id) => {
     setPosts(prev => prev.filter(post => post.id !== id));
-    console.log("DELETE (simulado) post:", id);
-  }
+    setToastMsg("Post eliminado correctamente");
+    setTimeout(() => setToastMsg(null), 2500);
+  };
 
   const handleEdit = (post) => {
-    console.log("Editar post (pendiente):", post);
-    // Aquí luego se implementará el EDIT real
-  }
+    setEditingPost(post);
+    setShowModal(true);
+  };
+
+  const handleSave = async (data, id) => {
+    if (id) {
+      const updated = await updatePost(id, data);
+      setPosts(prev => prev.map(p => (p.id === id ? updated : p)));
+      setToastMsg("Post actualizado con éxito");
+    } else {
+      const created = await createPost(data);
+      setPosts(prev => [created, ...prev]);
+      setToastMsg("Post creado correctamente");
+    }
+
+    setShowModal(false);
+    setEditingPost(null);
+
+    setTimeout(() => setToastMsg(null), 3000);
+  };
 
   if (loading) {
     return <p className={styles.loading}>Cargando posts...</p>;
@@ -45,9 +81,14 @@ export default function TestPage() {
   return (
     <div className={styles.container}>
       <TestCompNavbar />
+      
       <div className={styles.header}>
-        <h2 className={styles.title}>Listado de Posts</h2>
-        <button className={styles.addBtn}>Nuevo Post</button>
+        <h2 className={styles.title}>
+          {filterUserId ? `Posts del Usuario ID ${filterUserId}` : "Listado de Posts"}
+        </h2>
+        <button className={styles.addBtn} onClick={() => setShowModal(true)}>
+          Nuevo Post
+        </button>
       </div>
 
       <div className={styles.postList}>
@@ -60,6 +101,17 @@ export default function TestPage() {
           />
         ))}
       </div>
+
+      {showModal && (
+        <CreatePostModal
+          onClose={() => { setShowModal(false); setEditingPost(null); }}
+          onSave={handleSave}
+          initialData={editingPost}
+        />
+      )}
+
+      {/* Toast UI */}
+      {toastMsg && <Toast message={toastMsg} />}
     </div>
   );
 }

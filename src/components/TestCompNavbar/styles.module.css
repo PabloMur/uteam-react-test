@@ -1,5 +1,12 @@
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 5px;
+}
 .navbar{
-    background-color: red;
+    background-color: #0d47a1;
     padding: 10px 5px;
     margin-top: 5px;
     border-radius: 5px;
