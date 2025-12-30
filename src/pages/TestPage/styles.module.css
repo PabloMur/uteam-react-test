@@ -56,52 +56,58 @@
 
 /* Paginación */
 .pagination {
-  margin-top: 28px;
+  margin-top: 35px;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 14px;
+  gap: 22px;
 }
 
-.pageNumbers {
-  display: flex;
-  gap: 8px;
-}
-
+/* Botones numéricos */
 .pageBtn {
-  background: transparent;
-  border: 2px solid #2e2d7c;
+  background: #d3e7ff;
+  border: 2px solid #2a26ff;
   padding: 7px 13px;
   border-radius: 6px;
-  color: white;
+  color: #2a26ff;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition: 0.25s ease-in-out;
+  margin: 0 4px; /* Separación extra */
 }
 
+/* Hover */
 .pageBtn:hover:not(.activePage) {
-  background-color: rgba(42, 38, 255, 0.25);
+  background-color: #c0dbff;
+  transform: scale(1.06);
 }
 
+/* Página activa */
 .activePage {
-  background-color: #2a26ff;
+  background: #2a26ff;
   border-color: #2a26ff;
   color: white;
+  font-weight: 700;
+  box-shadow: 0px 0px 10px rgba(44, 44, 61, 0.6);
+  transform: scale(1.12);
 }
 
+/* Botones Anterior / Siguiente */
 .pagination button {
   background: #2a26ff;
   border: none;
-  padding: 8px 14px;
-  border-radius: 6px;
+  padding: 8px 18px;
+  border-radius: 8px;
   color: white;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition: background 0.25s ease, transform 0.2s;
+  margin: 0 6px;
 }
 
 .pagination button:hover:not(:disabled) {
   background-color: #16158a;
+  transform: scale(1.05);
 }
 
 .pagination button:disabled {
@@ -113,14 +119,16 @@
 /* RESPONSIVE PAGINATION */
 /* ------------------- */
 
-/* En pantallas menores a 900px ocultamos los números */
 @media (max-width: 900px) {
   .pageNumbers {
     display: none;
   }
+
+  .pagination {
+    gap: 26px; /* más separación en mobile */
+  }
 }
 
-/* Otros ajustes responsive existentes */
 @media (max-width: 768px) {
   .header {
     flex-direction: column;
