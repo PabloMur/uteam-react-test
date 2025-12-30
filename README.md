@@ -1,16 +1,119 @@
-# React + Vite
+Prueba Técnica – UTeam
+Desarrollador: Pablo Nicolás Murillo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación web desarrollada como prueba técnica para el puesto de Desarrollador Full Stack Jr en UTeam.
+El objetivo fue crear una SPA con React, consumo de API real, CRUD simulado, diseño responsive y navegación moderna.
 
-Currently, two official plugins are available:
+🌐 Deploy Online
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Proyecto disponible en producción:
+https://uteam-react-test.vercel.app/
 
-## React Compiler
+🛠 Tecnologías utilizadas
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+React + Vite
 
-## Expanding the ESLint configuration
+React Router DOM
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+CSS Modules
+
+Fetch API (JSONPlaceholder)
+
+Responsive Design
+
+🚀 Funcionalidades
+Home
+
+Presentación del proyecto y acceso directo a la prueba técnica
+
+Gradient moderno y visual limpio
+
+Gestión de Posts (CRUD completo)
+
+Listado obtenido desde API
+
+Crear / Editar / Eliminar posts (simulado localmente por limitaciones de API)
+
+Modal de creación/edición
+
+Toasts de feedback al usuario
+
+Paginación inteligente:
+
+Desktop: 9 posts por página
+
+Mobile: 5 posts por página
+
+Filtro de posts desde la vista de usuarios
+
+Gestión de Usuarios
+
+Cards con información útil (email, ciudad, empresa)
+
+Botón para navegar y ver posts del usuario seleccionado
+
+Diseño responsive con grillas adaptables
+
+📂 Arquitectura del Proyecto
+
+src/
+• ApiCalls.js
+• App.jsx
+• main.jsx
+• layouts/ (MainLayout con navbar + footer global)
+• components/ (componentes reutilizables y UI)
+• pages/ (HomePage, TestPage, UsersPage)
+
+Se aplicó:
+
+Atomic design y modularidad
+
+Layout global persistente con Outlet
+
+Estado local optimista en CRUD
+
+Estilos aislados por componente para evitar colisiones
+
+🔗 API utilizada
+
+JSONPlaceholder
+https://jsonplaceholder.typicode.com/
+
+Endpoints aplicados:
+
+/posts
+
+/users
+
+▶️ Ejecutar localmente
+
+Clonar repositorio
+
+Instalar dependencias
+npm install
+
+Correr proyecto
+npm run dev
+
+Abrir en navegador
+http://localhost:5173
+
+📌 Mejoras propuestas
+
+Vista detalle del post + comentarios
+
+Dark Mode
+
+Test unitarios
+
+Animaciones adicionales y transiciones suaves
+
+Manejo de estado global (Zustand / Redux)
+
+Validaciones avanzadas en formularios
+
+👨‍💻 Autor
+
+Pablo Nicolás Murillo
+Desarrollador Full Stack – Mar del Plata
+Prueba Técnica UTeam – 2025
