@@ -1,4 +1,4 @@
-import styles from "./PostCard.module.css";
+import styles from "./styles.module.css";
 
 const PostCard = ({ post, onEdit, onDelete }) => {
   return (
