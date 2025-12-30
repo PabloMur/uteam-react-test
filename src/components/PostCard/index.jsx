@@ -1,28 +1,19 @@
+import { Link } from "react-router-dom";
 import styles from "./styles.module.css";
 
-const PostCard = ({ post, onEdit, onDelete }) => {
+export function PostCard({ post, onEdit, onDelete }) {
   return (
     <div className={styles.card}>
-      
-      <div className={styles.cardTop}>
-        <p className={styles.badge}>Usuario #{post.userId}</p>
+  <h3 className={styles.cardTitle}>{post.title}</h3>
 
-        <div className={styles.actions}>
-          <button className={styles.editBtn} onClick={() => onEdit(post)}>
-            Editar
-          </button>
-          <button className={styles.deleteBtn} onClick={() => onDelete(post.id)}>
-            Eliminar
-          </button>
-        </div>
-      </div>
+  <p className={styles.cardBody}>{post.body}</p>
 
-      <h3 className={styles.cardTitle}>{post.title}</h3>
+  <div className={styles.actions}>
+    <button className={styles.editBtn} onClick={() => onEdit(post)}>Editar</button>
+    <button className={styles.deleteBtn} onClick={() => onDelete(post.id)}>Eliminar</button>
+    <a className={styles.viewBtn} href={`/post/${post.id}`}>Ver detalle →</a>
+  </div>
+</div>
 
-      <p className={styles.cardBody}>{post.body}</p>
-
-    </div>
   );
-};
-
-export { PostCard };
+}

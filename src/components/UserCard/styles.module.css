@@ -39,19 +39,31 @@
   opacity: 0.75;
 }
 
+/* Botón Desktop */
 .viewPostsBtn {
   margin-top: 14px;
   align-self: flex-start;
   background: #2f80ed;
   color: white;
-  padding: 8px 14px;
+  padding: 10px 16px;
   border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 15px;
   transition: background 0.25s ease-in-out;
 }
 
 .viewPostsBtn:hover {
   background-color: #0c3a89;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .viewPostsBtn {
+    width: 100%;
+    text-align: center;
+    padding: 12px 20px;
+    font-size: 16px;
+    align-self: center; /* Centrado dentro de la card */
+  }
 }
