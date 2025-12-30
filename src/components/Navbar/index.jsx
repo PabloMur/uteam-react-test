@@ -1,13 +1,12 @@
-import { Logo } from "../ui/Logo";
-import styles from "./styles.module.css";
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
   return (
-    <nav className={styles.container}>
-      <Logo />
-      aca va a ir la botonera para interactuaar con la app
+    <nav>
+      <Link to="/">Home</Link> |{' '}
+      <Link to="/test">Test</Link>
     </nav>
-  );
-};
+  )
+}
 
-export { Navbar };
+export default Navbar
