@@ -1,4 +1,4 @@
-Prueba Técnica – UTeam
+Prueba Técnica – Uteam
 Desarrollador: Pablo Nicolás Murillo
 
 Aplicación web desarrollada como prueba técnica para el puesto de Desarrollador Full Stack Jr en UTeam.
@@ -98,19 +98,11 @@ npm run dev
 Abrir en navegador
 http://localhost:5173
 
-📌 Mejoras propuestas
+Gist con resolicion de los ejercicios:
+https://gist.github.com/PabloMur/96bf0ff434885784200a4376ed35687e
 
-Vista detalle del post + comentarios
-
-Dark Mode
-
-Test unitarios
-
-Animaciones adicionales y transiciones suaves
-
-Manejo de estado global (Zustand / Redux)
-
-Validaciones avanzadas en formularios
+Despliegue en vercel:
+https://uteam-react-test.vercel.app
 
 👨‍💻 Autor
 
