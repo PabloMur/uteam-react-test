@@ -1,0 +1,10 @@
+.navbar{
+    background-color: red;
+    padding: 10px 5px;
+    margin-top: 5px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    width: fit-content;
+    justify-self: center;
+}

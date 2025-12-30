@@ -1,4 +1,6 @@
-.container{
-    background-color: #0F4C75;
-    color: white;
+.logo {
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
 }

@@ -1,0 +1,39 @@
+.customLink {
+  position: relative;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 500;
+  padding: 8px 12px;
+  transition: color 0.25s ease-in-out;
+}
+
+/* Línea animada debajo del link */
+.customLink::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background-color: #ffffff;
+  transition: all 0.25s ease-in-out;
+  transform: translateX(-50%);
+}
+
+.customLink:hover {
+  color: #ffffff;
+}
+
+.customLink:hover::after {
+  width: 60%;
+}
+
+.active {
+  color: #ffffff;
+}
+
+.active::after {
+  width: 60%;
+  background-color: #ffffff;
+}

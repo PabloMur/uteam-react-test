@@ -1,0 +1,44 @@
+.container {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-height: 90dvh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 28px;
+  color: #0d47a1;
+  font-weight: 600;
+}
+
+.addBtn {
+  background-color: #0d47a1;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 6px;
+  border: none;
+}
+
+.card {
+  background: white;
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.cardTitle {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.cardBody {
+  opacity: 0.8;
+}
