@@ -1,13 +1,14 @@
 .container {
   width: 100%;
-  max-width: 900px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  min-height: 90dvh;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-bottom: 50px;
+  color: #ffffff;
 }
 
+/* Header */
 .header {
+  margin-top: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -20,25 +21,113 @@
 }
 
 .addBtn {
-  background-color: #0d47a1;
-  color: white;
-  padding: 10px 18px;
-  border-radius: 6px;
+  background-color: #2a26ff;
+  color: #ebf1ff;
+  padding: 12px 20px;
+  border-radius: 8px;
   border: none;
-}
-
-.card {
-  background: white;
-  padding: 18px;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-}
-
-.cardTitle {
   font-weight: 600;
-  margin-bottom: 6px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
 }
 
-.cardBody {
-  opacity: 0.8;
+.addBtn:hover {
+  background-color: #1b1ad0;
+}
+
+/* Lista de Posts */
+.postList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 22px;
+  margin-top: 20px;
+}
+
+/* Loading y Error */
+.loading,
+.error {
+  margin-top: 50px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+/* Pagination */
+.pagination {
+  margin-top: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+}
+
+.pageNumbers {
+  display: flex;
+  gap: 8px;
+}
+
+.pageBtn {
+  background: transparent;
+  border: 2px solid #2a26ff;
+  padding: 7px 13px;
+  border-radius: 6px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.pageBtn:hover:not(.activePage) {
+  background-color: rgba(42, 38, 255, 0.25);
+}
+
+.activePage {
+  background-color: #2a26ff;
+  border-color: #2a26ff;
+  color: white;
+}
+
+.pagination button {
+  background: #2a26ff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.pagination button:hover:not(:disabled) {
+  background-color: #16158a;
+}
+
+.pagination button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Adaptación para pantallas más chicas */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .addBtn {
+    width: 100%;
+    max-width: 240px;
+  }
+
+  .pagination {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .pageNumbers {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
