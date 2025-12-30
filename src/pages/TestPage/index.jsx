@@ -16,13 +16,24 @@ export default function TestPage() {
   const [editingPost, setEditingPost] = useState(null);
   const [toastMsg, setToastMsg] = useState(null);
 
-  // PAGINACIÓN
   const [currentPage, setCurrentPage] = useState(1);
-  const postsPerPage = 9;
+  const [postsPerPage, setPostsPerPage] = useState(9);
 
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const filterUserId = searchParams.get("userId");
+
+  // Actualiza automáticamente los posts por página según el ancho
+  useEffect(() => {
+    const updatePostsPerPage = () => {
+      if (window.innerWidth <= 768) setPostsPerPage(5);
+      else setPostsPerPage(9);
+    };
+
+    updatePostsPerPage();
+    window.addEventListener("resize", updatePostsPerPage);
+    return () => window.removeEventListener("resize", updatePostsPerPage);
+  }, []);
 
   useEffect(() => {
     loadPosts();
@@ -31,11 +42,7 @@ export default function TestPage() {
   const loadPosts = async () => {
     try {
       let data = await getPosts();
-
-      if (filterUserId) {
-        data = data.filter((p) => p.userId == filterUserId);
-      }
-
+      if (filterUserId) data = data.filter((p) => p.userId == filterUserId);
       setPosts(data);
       setCurrentPage(1);
       setLoading(false);
@@ -47,8 +54,7 @@ export default function TestPage() {
 
   const handleDelete = (id) => {
     setPosts((prev) => prev.filter((post) => post.id !== id));
-    setToastMsg("Post eliminado correctamente");
-    setTimeout(() => setToastMsg(null), 2500);
+    showToast("Post eliminado correctamente");
   };
 
   const handleEdit = (post) => {
@@ -60,26 +66,28 @@ export default function TestPage() {
     if (id) {
       const updated = await updatePost(id, data);
       setPosts((prev) => prev.map((p) => (p.id === id ? updated : p)));
-      setToastMsg("Post actualizado con éxito");
+      showToast("Post actualizado con éxito");
     } else {
       const created = await createPost(data);
       setPosts((prev) => [created, ...prev]);
-      setToastMsg("Post creado correctamente");
+      showToast("Post creado correctamente");
     }
 
     setShowModal(false);
     setEditingPost(null);
+  };
+
+  const showToast = (msg) => {
+    setToastMsg(msg);
     setTimeout(() => setToastMsg(null), 3000);
   };
 
   if (loading) return <p className={styles.loading}>Cargando posts...</p>;
   if (error) return <p className={styles.error}>{error}</p>;
 
-  // Post por página
   const indexOfLast = currentPage * postsPerPage;
   const indexOfFirst = indexOfLast - postsPerPage;
   const currentPosts = posts.slice(indexOfFirst, indexOfLast);
-
   const totalPages = Math.ceil(posts.length / postsPerPage);
 
   const changePage = (page) => {
@@ -115,7 +123,7 @@ export default function TestPage() {
         ))}
       </div>
 
-      {/* PAGINACIÓN - NUMÉRICA */}
+      {/* PAGINACIÓN */}
       {totalPages > 1 && (
         <div className={styles.pagination}>
           <button

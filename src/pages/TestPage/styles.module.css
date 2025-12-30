@@ -41,6 +41,7 @@
   grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
   gap: 22px;
   margin-top: 20px;
+  padding: 10px;
 }
 
 /* Loading y Error */
@@ -53,7 +54,7 @@
   opacity: 0.9;
 }
 
-/* Pagination */
+/* Paginación */
 .pagination {
   margin-top: 28px;
   display: flex;
@@ -108,7 +109,18 @@
   cursor: not-allowed;
 }
 
-/* Adaptación para pantallas más chicas */
+/* ------------------- */
+/* RESPONSIVE PAGINATION */
+/* ------------------- */
+
+/* En pantallas menores a 900px ocultamos los números */
+@media (max-width: 900px) {
+  .pageNumbers {
+    display: none;
+  }
+}
+
+/* Otros ajustes responsive existentes */
 @media (max-width: 768px) {
   .header {
     flex-direction: column;
@@ -119,15 +131,5 @@
   .addBtn {
     width: 100%;
     max-width: 240px;
-  }
-
-  .pagination {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .pageNumbers {
-    flex-wrap: wrap;
-    justify-content: center;
   }
 }
