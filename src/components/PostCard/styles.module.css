@@ -4,9 +4,12 @@
   border-radius: 14px;
   padding: 22px;
   box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  justify-content: space-between; /* Para que el footer quede abajo */
+  
+  min-height: 260px; /* Consistencia visual */
   color: #111;
   transition: 0.25s ease-in-out;
 }
@@ -38,7 +41,7 @@
   font-weight: 700;
   margin: 5px 0;
   color: #0d47a1;
-  text-transform: capitalize;
+  text-transform: none; /* Se respetan mayúsculas de la API */
 }
 
 /* Texto */
@@ -46,21 +49,28 @@
   font-size: 16px;
   opacity: 0.85;
   line-height: 1.45;
+  margin-bottom: 12px;
+  flex: 1; /* Llena espacio libre */
 }
 
-/* Botones */
+/* Botones alineados abajo */
 .actions {
   display: flex;
   gap: 10px;
+  margin-top: auto;
 }
 
+/* Botones */
 .editBtn,
-.deleteBtn {
+.deleteBtn,
+.viewBtn {
   border: none;
   border-radius: 6px;
   padding: 6px 12px;
   font-size: 14px;
   cursor: pointer;
+  font-weight: 600;
+  transition: 0.25s ease-in-out;
 }
 
 .editBtn {
@@ -79,4 +89,16 @@
 
 .deleteBtn:hover {
   background-color: #a72e2b;
+}
+
+/* Link "Ver detalle" */
+.viewBtn {
+  margin-left: auto;
+  background: none;
+  color: #2a26ff;
+  border: none;
+}
+
+.viewBtn:hover {
+  text-decoration: underline;
 }
