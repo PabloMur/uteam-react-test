@@ -4,10 +4,11 @@
   padding-bottom: 40px;
 }
 
+/* Header */
 .header {
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
+  margin: 22px 0;
 }
 
 .title {
@@ -16,16 +17,16 @@
   font-weight: 600;
 }
 
+/* GRID — CARDS */
 .userList {
-  width: 70%;
+  width: 90%;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 22px;
 }
 
-
-/* CARD */
+/* Card */
 .card {
   background: #ffffff;
   color: #222;
@@ -40,8 +41,9 @@
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.22);
 }
 
+/* Card Info */
 .userName {
-  font-size: 20px;
+  font-size: 21px;
   font-weight: 700;
   margin-bottom: 6px;
 }
@@ -58,6 +60,7 @@
   opacity: 0.9;
 }
 
+/* Button */
 .viewPostsBtn {
   margin-top: 14px;
   display: inline-block;
@@ -72,4 +75,49 @@
 
 .viewPostsBtn:hover {
   background-color: #0d47a1;
+}
+
+/* ------------------- */
+/* RESPONSIVE DESIGN */
+/* ------------------- */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .userList {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .userList {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .card {
+    padding: 18px;
+    border-radius: 14px;
+  }
+}
+
+/* Extra Small */
+@media (max-width: 380px) {
+  .title {
+    font-size: 22px;
+  }
+
+  .card {
+    padding: 15px;
+    border-radius: 12px;
+  }
 }

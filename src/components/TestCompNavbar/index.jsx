@@ -8,7 +8,6 @@ const TestCompNavbar = () => {
       <nav className={styles.navbar}>
         <CustomNavLink to="/test">Posts</CustomNavLink>
         <CustomNavLink to="/users">Usuarios</CustomNavLink>
-        <CustomNavLink to="/albums">Albums</CustomNavLink>
       </nav>
       ;
     </div>
