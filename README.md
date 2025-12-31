@@ -1,111 +1,119 @@
-Prueba Técnica – Uteam
-Desarrollador: Pablo Nicolás Murillo
+# Prueba Técnica – UTeam  
+**Desarrollador:** Pablo Nicolás Murillo
 
-Aplicación web desarrollada como prueba técnica para el puesto de Desarrollador Full Stack Jr en UTeam.
-El objetivo fue crear una SPA con React, consumo de API real, CRUD simulado, diseño responsive y navegación moderna.
+Aplicación web desarrollada como prueba técnica para Desarrollador Full Stack Jr.  
+Objetivo: SPA en React con API REST, CRUD simulado, navegación moderna y diseño responsive.
 
-🌐 Deploy Online
+---
 
-Proyecto disponible en producción:
-https://uteam-react-test.vercel.app/
+## 🌐 Deploy Online  
+Producción en Vercel:  
+**https://uteam-react-test.vercel.app/**
 
-🛠 Tecnologías utilizadas
+---
 
-React + Vite
+## 🛠 Tecnologías utilizadas
 
-React Router DOM
+- React + Vite
+- React Router DOM
+- CSS Modules
+- Fetch API (JSONPlaceholder)
+- Responsive Design (Mobile-first)
 
-CSS Modules
+---
 
-Fetch API (JSONPlaceholder)
+## 🚀 Funcionalidades
 
-Responsive Design
+### Página Home
+- Presentación del proyecto
+- UI moderna con gradientes y CTA principal
 
-🚀 Funcionalidades
-Home
+### Gestión de Posts (CRUD funcional local)
+- Listado desde API
+- Crear / Editar / Eliminar publicaciones (simulado localmente)
+- Modal accesible y validado
+- Toast de notificaciones
+- Vista detallada de post + comentarios del API
 
-Presentación del proyecto y acceso directo a la prueba técnica
+#### Paginación Inteligente
+- Desktop: **9 posts / página**
+- Mobile: **5 posts / página**
+- Indicador visual de página activa
 
-Gradient moderno y visual limpio
+#### Filtro de Posts por Usuario
+- Navegación desde UsersPage con query params
 
-Gestión de Posts (CRUD completo)
+---
 
-Listado obtenido desde API
+### Gestión de Usuarios
+- Cards con datos relevantes (email, empresa, ciudad)
+- Botón para ver posts del usuario seleccionado
+- Grilla responsive
 
-Crear / Editar / Eliminar posts (simulado localmente por limitaciones de API)
+---
 
-Modal de creación/edición
-
-Toasts de feedback al usuario
-
-Paginación inteligente:
-
-Desktop: 9 posts por página
-
-Mobile: 5 posts por página
-
-Filtro de posts desde la vista de usuarios
-
-Gestión de Usuarios
-
-Cards con información útil (email, ciudad, empresa)
-
-Botón para navegar y ver posts del usuario seleccionado
-
-Diseño responsive con grillas adaptables
-
-📂 Arquitectura del Proyecto
+## 📂 Arquitectura del Proyecto
 
 src/
-• ApiCalls.js
-• App.jsx
-• main.jsx
-• layouts/ (MainLayout con navbar + footer global)
-• components/ (componentes reutilizables y UI)
-• pages/ (HomePage, TestPage, UsersPage)
+│ ApiCalls.js
+│ main.jsx
+│ App.jsx
+│
+├─ layouts/
+│ └─ MainLayout.jsx
+│
+├─ pages/
+│ ├─ HomePage/
+│ ├─ TestPage/ (Posts)
+│ └─ UsersPage/
+│
+├─ components/
+│ ├─ PostCard/
+│ ├─ UserCard/
+│ ├─ CreatePostModal/
+│ ├─ Toast/
+│ └─ ui/
+│ ├─ Logo
+│ └─ CustomNavLink
 
-Se aplicó:
 
-Atomic design y modularidad
 
-Layout global persistente con Outlet
+- Atomic design y modularización
+- Layout global con `<Outlet />`
+- Estados locales con UX mejorada
+- Estilos aislados con CSS Modules
 
-Estado local optimista en CRUD
+---
 
-Estilos aislados por componente para evitar colisiones
+## 🔗 API REST utilizada
 
-🔗 API utilizada
-
-JSONPlaceholder
+**JSONPlaceholder**  
 https://jsonplaceholder.typicode.com/
 
-Endpoints aplicados:
+Endpoints utilizados:
+- `/posts`
+- `/users`
+- `/comments`
 
-/posts
+---
 
-/users
+## ▶️ Ejecutar localmente
 
-▶️ Ejecutar localmente
-
-Clonar repositorio
-
-Instalar dependencias
+```sh
+git clone <repo-url>
+cd uteam-react-test
 npm install
-
-Correr proyecto
 npm run dev
 
-Abrir en navegador
+
+Abrir en navegador 
 http://localhost:5173
 
-Gist con resolicion de los ejercicios:
+Gist con resolicion de los ejercicios: 
 https://gist.github.com/PabloMur/96bf0ff434885784200a4376ed35687e
 
 Despliegue en vercel:
 https://uteam-react-test.vercel.app
 
 👨‍💻 Autor
-
-Pablo Nicolás Murillo
-Desarrollador Full Stack – Mar del Plata
-Prueba Técnica UTeam – 2025
+Pablo Nicolás Murillo Desarrollador Full Stack – Mar del Plata Prueba Técnica UTeam – 2025
